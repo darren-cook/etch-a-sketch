@@ -2,6 +2,7 @@ const wrapper = document.querySelector(".wrapper");
 const gridSlide = document.querySelector("#gridSlide");
 const resetBtn = document.querySelector("#resetBtn");
 const toggleBtn = document.querySelector("#toggleBtn");
+const colorPicker = document.querySelector("#colorPicker");
 
 let toggleCount = 0;
 
@@ -48,4 +49,16 @@ toggleBtn.addEventListener("click", function(){
     }
     toggleCount ++;
 })
+
+wrapper.addEventListener("mouseover", function(event){
+    paintBox(event.target.id);
+})
+
+function paintBox(boxId) {
+    let currentColor = colorPicker.value;
+    const toPaint = document.getElementById(boxId);
+    console.log(boxId)
+    toPaint.style.backgroundColor = currentColor;
+}
+
 
